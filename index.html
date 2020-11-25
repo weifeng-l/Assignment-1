@@ -3,8 +3,32 @@
 
 <head>
     <style>
+        *,::before,::after {
+            box-sizing: border-box;
+        }
+        
         body {
-            background-color: royalblue;
+            margin: 0;
+            padding: 0 4px;
+            height: 100vh;
+            overflow: hidden;
+            line-height: 1.5;
+            font-family: 'Inconsolata', sans-serif;
+            font-size: 62.5%;
+            background-color: #191a1d;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover,a.leadlink {
+            color: #c80815;
+        }
+        
+        header a {
+            text-transform: uppercase;
         }
     </style>
     <meta charset="UTF-8">
