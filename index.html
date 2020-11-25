@@ -100,19 +100,13 @@
             position: relative;
             display: flex;
             min-height: 100vh;
-            padding: 2em 3em;
+            padding: 2em, 3em;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             font-size: 1rem;
             border-radius: 1em;
-            background-color: royalblue;
-        }
-
-        section:nth-child(odd) {
-            background-color: red;
-        }
-
+            background: #4169e1;
         }
 
         section#one h1 {
@@ -138,12 +132,6 @@
             stroke-linecap: round;
         }
 
-        section#one .title path {
-            stroke: #fff;
-            stroke-width: 4;
-            animation-delay: 1s;
-        }
-
         section#one::after {
             position: absolute;
             content: '';
@@ -151,9 +139,16 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: linear-gradient(0deg, rgba(29, 30, 34, 0.3), #1d1e22);
+            background-image: linear-gradient(0deg, rgba(29, 30, 34, 0.3), #3e3e3f);
         }
 
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+        
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,16 +173,16 @@
                     Immersive media. select the below text to find out more about me.
                 </p>
                 <p class="lead">
-                    <a href="#" class="logo">My webpage</a>
+                    <a href="#two" class="logo">My webpage</a>
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="resume.html">Resume</a></li>
-                        <li><a href="contact.html>Contact"></a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </p>
             </div>
             <div class="blur">
-                photo will add here
+                <div class="image"><img src="weifeng.jpg" alt="Picture of weifeng"></div>
             </div>
         </div>
     </section>
