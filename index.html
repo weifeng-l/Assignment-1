@@ -3,10 +3,12 @@
 
 <head>
     <style>
-        *,::before,::after {
+        *,
+        ::before,
+        ::after {
             box-sizing: border-box;
         }
-        
+
         body {
             margin: 0;
             padding: 0 4px;
@@ -15,7 +17,26 @@
             line-height: 1.5;
             font-family: 'Inconsolata', sans-serif;
             font-size: 62.5%;
-            background-color: #191a1d;
+            color: #fff;
+            background-color: #1d1e22;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #1d1e22;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 1em;
+            background-color: #312d3c;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #df2359;
         }
 
         a {
@@ -23,20 +44,34 @@
             color: #fff;
         }
 
-        a:hover,a.leadlink {
-            color: #c80815;
+        a:hover,
+        a.leadlink {
+            color: #df2359;
         }
-        
+
+        h1,
+        h2,
         header a {
             text-transform: uppercase;
         }
 
-        header {
+        .smooth {
+            margin: 0 auto;
+            padding: 0 4px;
+            padding-left: 8px;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        header,
+        footer {
             position: relative;
-            padding: 2.5rem 2.5rem;
+            padding: 2em 3em;
             display: flex;
             align-items: center;
-            font-size: 0.5rem;
+            font-size: 1rem;
         }
 
         header {
@@ -45,7 +80,7 @@
             top: 0;
             z-index: 2;
             height: 10vh;
-            background-color: #100c08;
+            background-color: #1d1e22;
         }
 
         header h3 {
@@ -53,7 +88,7 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
-            color: #fd3f92;
+            color: #df2359;
         }
 
         header ul {
@@ -73,7 +108,7 @@
         }
 
         header ul li a {
-            font-family: "Montserrat",sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             color: #fff;
         }
@@ -93,20 +128,82 @@
 
         header ul li:hover::before {
             width: 100%;
-            background-color: #c80815;
+            background-color: #df2359;
         }
-        
+
+        .grid {
+            display: grid;
+            grid-gap: 2em;
+        }
+
+        .grid.g_two {
+            grid-template-columns: 1fr minmax(300px, auto);
+        }
+
+        .flex {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        .flex.column {
+            flex-flow: column wrap;
+            justify-content: space-between;
+        }
+
+        .jcsb {
+            justify-content: space-between;
+        }
+
+        progress {
+            position: relative;
+            margin: 1em 0;
+        }
+
+        progress[value] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            max-width: 360px;
+            height: 1px;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #666;
+            border-radius: 1em;
+        }
+
+        progress::-webkit-progress-value {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            background-color: #df2359;
+            border-radius: 1em;
+            height: 5px;
+        }
+
         section {
             position: relative;
             display: flex;
             min-height: 100vh;
-            padding: 2em, 3em;
+            padding: 2em 3em;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             font-size: 1rem;
             border-radius: 1em;
-            background: #4169e1;
+            background-color: #191a1d;
+        }
+
+        section:nth-child(odd) {
+            background-color: #1d1e22;
+        }
+
+        section#one {
+            background-image: url("https://andrejsharapov.github.io/iogo/src/header.jpg");
+            background-position: center;
+            background-size: cover;
+            color: #fff;
         }
 
         section#one h1 {
@@ -117,11 +214,11 @@
         }
 
         section#one .title {
-            min-width: 550px;
+            min-width: 350px;
             max-height: 80px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 30px;
-            font-weight: 300;
+            font-size: 3rem;
+            font-weight: 600;
         }
 
         section#one .title text {
@@ -132,6 +229,12 @@
             stroke-linecap: round;
         }
 
+        section#one .title path {
+            stroke: #fff;
+            stroke-width: 4;
+            animation-delay: 1s;
+        }
+
         section#one::after {
             position: absolute;
             content: '';
@@ -139,7 +242,43 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: linear-gradient(0deg, rgba(29, 30, 34, 0.3), #3e3e3f);
+            background-image: linear-gradient(0deg, rgba(29, 30, 34, 0.3), #1d1e22);
+        }
+
+        section#two .blocks {
+            padding: 2em 0;
+            display: flex;
+            width: 100%;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        section#two .blocks .block {
+            margin: 0 auto;
+            display: flex;
+            width: 23%;
+            height: 150px;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #312d3c;
+            border-radius: 1em;
+            background-color: #191a1d;
+            transition: all 0.2s linear;
+        }
+
+        section#two .blocks .block:hover {
+            transform: translateY(-10px);
+            background-color: #312d3c;
+        }
+
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        section h2 span {
+            color: #df2359;
         }
 
         .content {
@@ -148,44 +287,272 @@
             display: flex;
             align-items: center;
         }
-        
+
+        .content p.lead {
+            font-size: 1.25rem;
+        }
+
+        .content .blur {
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            margin-left: 2em;
+            padding: 1em;
+            width: 100%;
+            height: 350px;
+            border-radius: 0.35em;
+        }
+
+        .content .blur::before {
+            position: absolute;
+            content: '';
+            top: -25%;
+            left: -25%;
+            width: 150%;
+            height: 150%;
+            box-shadow: inset 0 0 0 600px rgba(255, 255, 255, 0.3);
+            filter: blur(10px);
+        }
+
+        form {
+            position: relative;
+            z-index: 3;
+            padding: 1em;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            border: 2px solid #fff;
+            border-radius: 0.35em;
+        }
+
+        form img {
+            width: 64px;
+            height: 64px;
+        }
+
+        form input {
+            margin-bottom: 1em;
+            min-height: 3em;
+            font-size: 1em;
+            color: #fff;
+            border: 0;
+            border-bottom: 2px solid #fff;
+            background: none;
+        }
+
+        form input::placeholder {
+            position: relative;
+            top: 0;
+            color: inherit;
+            transition: all 0.2s linear;
+        }
+
+        form input:focus {
+            outline: none;
+        }
+
+        form input:focus::placeholder {
+            top: -1.25em;
+            font-size: 0.825rem;
+        }
+
+        form .button {
+            position: relative;
+            margin-top: 1em;
+            padding: 1em 3em;
+            text-transform: uppercase;
+            display: block;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #fff;
+            border: 0;
+            border-radius: 0.35em;
+            background-color: #df2359;
+        }
+
+        .btn {
+            width: 110px;
+            height: 40px;
+            background-color:#fff;
+            border-radius: 15px;
+            border: 2px solid #fff;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background-color: #df2359;
+            border-color: #df2359;
+        }
+
+        footer {
+            padding-bottom: 1em;
+            width: 100%;
+            min-height: 35vh;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: #191a1d;
+        }
+
+        footer h3 {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        footer h3::before {
+            position: absolute;
+            content: '';
+            top: calc(100% + 4px);
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background-color: #df2359;
+            transform-origin: 0 100%;
+            transform: rotate(-5deg);
+            transition: all 0.2s ease-out;
+        }
+
+        footer h5 {
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        footer h5.follow {
+            color: #df2359;
+        }
+
+        footer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer ul li {
+            line-height: 1.5;
+            transition: transform 200ms ease-in;
+            will-change: transform;
+        }
+
+        footer ul li:hover {
+            transform: translateX(5px);
+        }
+
+        footer .widgets,
+        footer .copy {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .widgets .widget,
+        footer .copy .widget {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .copy {
+            margin-top: 1em;
+            border-top: 2px solid #312d3c;
+        }
+
+        footer .copy p {
+            margin: 0.75em 0 0;
+        }
+
+        footer .copy span {
+            position: relative;
+            display: inline-block;
+            color: #df2359;
+            animation: hearts 0.6s cubic-bezier(0.18, 0.89, 0.29, 1.05) infinite;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <h3>My webpage</h3>
-        <ul>
-            <li><a href="#one">Home</a></li>
-        </ul>
-    </header>
-    <section id="one">
-        <div class="content parallax">
-            <div>
-                <svg class="title">
-                    <text x="0" y="40">Hello, Welcome to my webpage</text>
-                </svg>
-                <p class="lead">
-                    Mine name is wei feng, i am 20 years old this years. i am a Student at NgeeAnn polytechic studying
-                    Immersive media. select the below text to find out more about me.
-                </p>
-                <p class="lead">
-                    <a href="#two" class="logo">My webpage</a>
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </p>
+
+    <div class="smooth">
+        <header>
+            <h3>Portfolio</h3>
+            <ul>
+                <li><a href="#one">Home</a></li>
+                <li><a href="#two">About</a></li>
+                <li><a href="#three">My Works</a></li>
+            </ul>
+        </header>
+        <section id="one">
+            <div class="content parallax">
+                <div>
+                    <h1>Welcome to mine portfolio</h1>
+                    <svg class="title">
+                        <text x="0" y="40">Hello...</text>
+                    </svg>
+                    <p class="lead">
+                        Welcome to my portfolio website mine name is Wei Feng.
+                    </p>
+                    <p class="lead">
+                        select the below taps to find out more about me!!
+                    </p>
+                    <a href="#one">
+                        <button class="btn">Home</button>
+                    </a>
+                    <a href="#two">
+                        <button class="btn">About me</button>
+                    </a>
+                    <a href="#three">
+                        <button class="btn">My Works</button>
+                    </a>
+
+                    </a>
+                </div>
+                <div class="blur">
+                    <form>
+                        <p>Ask me any questions</p>
+                        <input type="text" placeholder="Email:" />
+                        <label for="feedback"></label><br>
+                        <textarea name="Information" rows="10" cols="50" placeholder="Post your questions here."></textarea><br>
+                        <a class="button" href="#button">Send</a>
+                    </form>
+                </div>
             </div>
-            <div class="blur">
-                <div class="image"><img src="weifeng.jpg" alt="Picture of weifeng"></div>
+        </section>
+        <section id="two">
+            <h2>About<span> Me</span></h2>
+            <p>This page is a background information about myself and what i like to do.</p>
+            <div class="blocks">
+                <div class="block">
+                    <p>I am 20 years old this year,
+                         i am currently studying in NgeeAnn poly in the Immersive Media course</p>
+                </div>
+                <div class="block">
+                    <p>
+                        Here are some games the i play
+                    </p>
+                    <p>
+                    <img src="apex.jpg" alt="apex legend icon" style="width: 78px; height: 60px;">
+                    <img src="dota 2.jpg" alt="dota 2 icon" style="width: 70px; height: 65px; ">
+                    </p>
+                </div>
+                <div class="block">
+                    <p>I used to work at NEC asia pacific pte ltd for 6 months
+                         as a Level 2 IT Tech support around the singpore checkpoints.</p>
             </div>
-        </div>
-    </section>
+        </section>
+        <section id="three">
+            <h2>My<span> Works</span></h2>
+            <div class="container">
+                <div>
+                    <div class="gallery">
+                        <img src="ratgame.jpg" alt="Ratgame codes">
+                        <div>this is a rat game code that i create for my python course last time</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
 </body>
 
 </html>
