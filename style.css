@@ -149,12 +149,6 @@
             stroke-linecap: round;
         }
 
-        section#one .title path {
-            stroke: #fff;
-            stroke-width: 4;
-            animation-delay: 1s;
-        }
-
         section#one::after {
             position: absolute;
             content: '';
@@ -171,25 +165,27 @@
             width: 100%;
             flex-flow: row wrap;
             justify-content: space-around;
-            align-items: realitive;
         }
 
         section#two .blocks .block {
             margin: 0 auto;
             display: flex;
-            width: 23%;
-            height: 150px;
+            width: 25%;
+            height: 170px;
             justify-content: center;
             align-items: center;
-            border: 3px solid #312d3c;
+            border: 4px solid #312d3c;
             border-radius: 1em;
             background-color: #191a1d;
             transition: all 0.2s linear;
             text-align: center;
+            overflow: auto;
+            resize: initial;
         }
 
         section h2 {
             font-family: 'Nerko One', cursive;
+            font-size: 45px;
         }
 
         section h2 span {
@@ -205,6 +201,7 @@
 
         .content p.lead {
             font-size: 1.25rem;
+            display: flex;
         }
 
         .content .blur {
@@ -216,6 +213,7 @@
             width: 100%;
             height: 350px;
             border-radius: 1em;
+            display: flex;
         }
 
         .content .blur::before {
@@ -227,6 +225,8 @@
             height: 150%;
             box-shadow: inset 0 0 0 600px rgba(206, 31, 197, 0.473);
             filter: blur(10px);
+            overflow: auto;
+            display: flex;
         }
 
         form {
@@ -251,6 +251,7 @@
             border: 0;
             border-bottom: 2px solid #fff;
             background: none;
+            display: flex;
         }
 
         form input::placeholder {
@@ -258,6 +259,7 @@
             top: 0;
             color: inherit;
             transition: all 0.2s linear;
+            display: flex;
         }
 
         form input:focus {
@@ -281,6 +283,7 @@
             border: 0;
             border-radius: 0.35em;
             background-color: #21421e;
+            display: flex;
         }
 
         .btn {
@@ -331,11 +334,11 @@
         .block img {
             width: 20%;
             height: auto;
-            align-items: left;
+            align-items: flex-end;
         }
         .profile {
             margin: 5px;
-            border: 1px absolute #fff;
+            border: 1px hidden #fff;
             float: left;
             width: 200px;
         }
@@ -355,4 +358,3 @@
         display: flex;
         }
       }
-      
