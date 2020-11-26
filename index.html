@@ -178,7 +178,7 @@
             width: 100%;
             flex-flow: row wrap;
             justify-content: space-around;
-            align-items: center;
+            align-items: realitive;
         }
 
         section#two .blocks .block {
@@ -235,38 +235,6 @@
             box-shadow: inset 0 0 0 600px rgba(206, 31, 197, 0.473);
             filter: blur(10px);
         }
-        .content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .content p.lead {
-            font-size: 1.25rem;
-        }
-
-        .content .blur {
-            position: relative;
-            overflow: hidden;
-            margin: auto;
-            margin-left: 2em;
-            padding: 1em;
-            width: 100%;
-            height: 350px;
-            border-radius: 0.35em;
-        }
-
-        .content .blur::before {
-            position: absolute;
-            content: '';
-            top: -25%;
-            left: -25%;
-            width: 150%;
-            height: 150%;
-            box-shadow: inset 0 0 0 600px rgba(255, 255, 255, 0.3);
-            filter: blur(10px);
-        }
 
         form {
             position: relative;
@@ -282,13 +250,8 @@
             border-radius: 0.35em;
         }
 
-        form img {
-            width: 64px;
-            height: 64px;
-        }
-
         form input {
-            margin-bottom: 1em;
+            margin-bottom: 2em;
             min-height: 3em;
             font-size: 1em;
             color: #fff;
@@ -324,7 +287,7 @@
             color: #fff;
             border: 0;
             border-radius: 0.35em;
-            background-color: #df2359;
+            background-color: #21421e;
         }
 
         .btn {
@@ -332,16 +295,65 @@
             height: 40px;
             background-color:#fff;
             border-radius: 15px;
-            border: 2px solid #fff;
+            border: 2.45px solid rgb(0, 0, 0);
             transition: 0.2s;
         }
+        
         .btn:hover {
             background-color: #df2359;
-            border-color: #df2359;
+            border-color: #21421e;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            float: left;
+            background-color: #34414e;
+            overflow: auto;
+        }
+        .gallery {
+            margin: 5px;
+            border: 1px solid #fff;
+            float: left;
+            width: 390px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery div{
+            text-align: center;
+            font-family: 'Nerko One', cursive;
+        }
+
+        .descreption{
+            background-color: rgb(0, 0, 0);
+            padding: 15px;
+            font-size: 9px;
+            text-align: justify;
+            color: gold;
+        }
+
+        .block img {
+            width: 20%;
+            height: auto;
+            align-items: left;
+        }
+        .profile {
+            margin: 5px;
+            border: 1px absolute #fff;
+            float: left;
+            width: 200px;
+        }
+        .profile img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         @media (max-width: 375px){
-        .split{
+        .body{
           flex-direction:column;
         }
       }
@@ -350,8 +362,9 @@
         display: flex;
         }
       }
-      
     </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -429,23 +442,23 @@
                 <div>
                     <div class="gallery">
                         <img src="ratgame.jpg" alt="Ratgame codes">
-                        <div>this is a rat game code that i create for my python course last sem</div>
+                        <div class="descreption">this is a rat game code that i create for my python course last sem</div>
                     </div>
                     <div class="gallery">
                         <img src="app icon.JPG" alt="app icon">
-                        <div>this is a spotify icon that i create for my Design principles course last sem</div>
+                        <div class="descreption">this is a spotify icon that i create for my Design principles course last sem</div>
                     </div>
                     <div class="gallery">
                         <img src="loading screen.JPG" alt="Loading screen ">
-                        <div>this is the app loading screen that i create for my Design principles course last sem</div>
+                        <div class="descreption">this is the app loading screen that i create for my Design principles course last sem</div>
                     </div>
                     <div class="gallery">
                         <img src="infograpghy page.JPG" alt="Information page ">
-                        <div>this is a information page that i create for my Design principles course last sem</div>
+                        <div class="descreption">this is a information page that i create for my Design principles course last sem</div>
                     </div>
                     <div class="gallery">
                         <img src="prototype.jpg" alt="prototype">
-                        <div>this is a app prototype that i create for my IMP course last sem</div>
+                        <div class="descreption">this is a app prototype that i create for my IMP course last sem</div>
                     </div>
                 </div>
             </div>
